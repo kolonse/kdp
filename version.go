@@ -2,5 +2,5 @@
 package kdp
 
 var (
-	VERSION = "KDP/0.1"
+	VERSION = "KDP/1.0"
 )
