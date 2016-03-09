@@ -3,6 +3,9 @@
 *	kdp 协议  全称:kolonse diy proto
 *	用于做TCP方式双向通信简单协议
 *	主要用于简化TCP通信时使用JSON或者二进制方式导致不方便查看数据内容的问题
+*	@2016.3.8 by jszhou2
+*	将 KDP_PROTO_HEAD_MARK 和 KDP_PROTO_HEAD_END 长度改小
+*	khmb和khme表示 kolonse head mark begin/end
  */
 package kdp
 
@@ -14,13 +17,14 @@ import (
 /**
 *	TCP 协议
  */
+
 const (
-	KDP_PROTO_HEAD_MARK   = "-------kolonse head mark begin-------\r\n"
+	KDP_PROTO_HEAD_MARK   = "-khmb-\r\n"
 	KDP_PROTO_BODY_LENGTH = "Content Length:"
 	KDP_PROTO_LOCAL_ADDR  = "Local Addr:"
 	KDP_PROTO_REMOTE_ADDR = "Remote Addr:"
 	KDP_PROTO_LINE_END    = "\r\n"
-	KDP_PROTO_HEAD_END    = "-------kolonse head mark end-------\r\n"
+	KDP_PROTO_HEAD_END    = "-khme-\r\n"
 )
 
 type KDP struct {
